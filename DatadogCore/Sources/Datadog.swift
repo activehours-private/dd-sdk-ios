@@ -525,11 +525,9 @@ public enum Datadog {
     /// - It completes all pending asynchronous work in each feature.
     ///
     /// This is highly experimental API and only supported in tests.
-#if DD_SDK_COMPILED_FOR_TESTING
     public static func flushAndDeinitialize(instanceName: String = CoreRegistry.defaultInstanceName) {
         internalFlushAndDeinitialize(instanceName: instanceName)
     }
-#endif
 
     internal static func internalFlushAndDeinitialize(instanceName: String = CoreRegistry.defaultInstanceName) {
         // Unregister core instance:
